@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.min.css"> <!-- link de bootstrap -->
+    <link rel="stylesheet" href="css/style.css"> <!-- link de la hoja de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link de font awesome 4 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/> <!-- link para el mapa -->
+    <script src="/js/include.js"></script> <!-- link js externo -->
+</head>
+
+<!-- 
+    Todas los caracteres del index tienen la clase 'color-content' la cual explico su uso en style.css 
+    Todos los botones del index tienen la clase 'button-css' la cual explico su uso en style.css
+    La clase bg-content esta explicada su uso en el archivo style.css
+-->
+
+<body class="p-0"> <!-- quito el padding -->
+    
+    <div class="header"><!-- CABECERA -->
+        <!-- 
+            Este es el menu de bootstrap ligeramente modificado 
+            como el tamaño de letra, o el switch(Modo Oscuro) 
+        -->
+        <nav class="navbar navbar-expand-lg bg-content fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand color-content fs-3" href="./index.html">MrShisa</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link color-content fs-5" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link color-content fs-5" href="./index2.html">Cachimbas</a>
+                    </li>
+                    <a class="nav-link color-content fs-5" href="index3.html">Accesorios</a>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <div class="form-check form-switch" id="switch">
+                    <input class="form-check-input fs-5" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label color-content fs-5" for="flexSwitchCheckDefault">Modo Oscuro</label> <!-- Switch -->
+                  </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class=" mt-4 body-content text-center container-fluid"> <!-- Contenedor padre -->
+        <!--
+            Este es el contenido principal de la pagina
+        -->
+        <p class="fs-4 color-content">BEST SHISA QUALITY</p>
+
+        <div class="cachimbas container-fluid d-flex flex-wrap align-items-center rounded bg-grey justify-content-center"> <!-- Contenedor 1 -->
+            <div class="col-12 justify-content-start d-flex"> <!-- Titulo -->
+                <p class="fs-5 color-content">CACHIMBAS</p>
+            </div>
+            <div class="col-lg-6" id="padre"> <!-- Contenedor de la imagen -->
+                <img src="./img/img1.jpeg" alt="cachimbas" id="imagen" class="col-12 col-sm-12 col-lg-12 mb-0"><!-- imagen -->
+                <button class="col-12 col-sm-12 col-md-12 col-lg-4 mt-4 mb-4 rounded button-css fs-5">SABER MÁS</button> <!-- boton con la clase button-css(style.css) -->
+            </div>
+            <div class="col-lg-6 col-md-12 d-flex flex-wrap justify-content-center"> <!-- Contenedor -->
+                <!-- Este Contendor se repite posteriormente -->
+                <p class="col-lg-12 color-content w-75 fs-5">Conoce y aprende más sobres nuestros modelos de cachimbas más vendidos.</p>
+                <div class="p-4 col-lg-12 mt-5 bg-content-two w-75 rounded mb-4">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 fw-bold color-content">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cazoletas container-fluid d-flex flex-wrap align-items-center mt-5 justify-content-center"> <!-- Contenedor 2 -->
+            <div class="col-12 justify-content-start d-flex"><!-- Titulo -->
+                <p class="fs-5 color-content">CAZOLETAS</p>
+            </div>
+            <!-- 
+                En este caso la pagina invierte el contenedor pero solo en la vista pc ya que en la vista tablet y movil los contenedores ocupan las
+                 12 columnas, es por eso que se repite el mismo bloque con el añadido de las clases d-lg-flex para que se visualice y la clase d-none
+                 para que el resto de vistas no lo visualicen, mientras que el otro contenedor utiliza d-lg-none para no visualizarlo en la vista pc
+                 y d-flex para que el resto si.
+            -->
+            <div class="col-lg-6 col-md-12 d-none d-lg-flex flex-wrap justify-content-center"> <!-- Contenedor con las clases d-none y d-lg-flex (Solo se visualiza en pc ) -->
+                <p class="col-lg-12 color-content w-75 fs-5">Conoce y aprende más sobres nuestros modelos de cachimbas más vendidos.</p>
+                <div class="p-4 col-lg-12 mt-5 bg-content-two w-75 rounded mb-4">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 color-content fw-bold">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>            
+            </div>
+            <div class="col-lg-6" id="padre"><!-- Contenedor de la imagen -->
+                <img src="./img/img1.jpeg" alt="cachimbas" id="imagen" class="col-12 col-sm-12 col-lg-12 mb-0"><!-- imagen -->
+                <button class="col-12 col-sm-12 col-md-12 col-lg-4 mt-4 mb-4 rounded button-css fs-5">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+            </div>
+            <div class="col-lg-6 col-md-12 d-lg-none d-flex flex-wrap justify-content-center"> <!-- Contenedor con las clases d-flex y d-lg-none (No se visualiza en pc) -->
+                <p class="col-lg-12 color-content">Conoce y aprende más sobres nuestros modelos de cachimbas más vendidos.</p>
+                <div class="p-4 col-lg-12 mt-5 bg-content-two w-75 rounded mb-4">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 fw-bold color-content">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bases container-fluid d-flex flex-wrap align-items-center rounded bg-grey justify-content-center"><!-- Contenedor 3 -->
+            <div class="col-12 justify-content-start d-flex"><!-- Titulo -->
+                <p class="fs-5 color-content">BASES</p>
+            </div>
+            <div class="col-lg-6" id="padre"><!-- Contenedor de la imagen -->
+                <img src="./img/img1.jpeg" alt="cachimbas" id="imagen" class="col-12 col-sm-12 col-lg-12 mb-0"><!-- imagen -->
+                <button class="col-12 col-sm-12 col-md-12 col-lg-4 mt-4 mb-4 rounded button-css fs-5">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+            </div>
+            <div class="col-lg-6 col-md-12 d-flex flex-wrap justify-content-center">
+                <p class="col-lg-12 color-content w-75 fs-5">Conoce y aprende más sobres nuestros modelos de cachimbas más vendidos.</p>
+                <div class="p-4 col-lg-12 mt-5 bg-content-two w-75 rounded mb-4">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 fw-bold color-content">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="m-4"> <!-- divisor -->
+
+    <div class="footer d-flex flex-wrap mb-5"> <!-- contenedor del pie de pagina -->
+    <div class="map col-12 col-lg-6 text-center d-flex justify-content-center"> <!-- Contenedor -->
+        <div class="p-3 col-8 rounded bg-content" id="padre"><!-- Contenedor del mapa -->
+            <p class="m-0 col-12 color-content fs-5 fw-bold mb-3">VISITANOS</p><!-- Titulo -->
+            <div id="map"></div> <!-- Mapa -->
+        </div>
+    </div>
+    <div class="vl col-lg-1 d-lg-block d-none"></div> <!-- Divisor lateral con la clase 'vl' solo se visualiza en vista pc (Utilizando las clases d-lg-block y d-none) -->
+    <div class="subscribe container col-12 col-lg-5 p-0 text-center d-flex align-items-center justify-content-center"><!-- Contenedor -->
+        <div class="w-100"><!-- Contenedor 100%Ancho -->
+            <div class="col-12">
+                <p class="color-content fw-bold fs-5">Subscribete a nuestra newsletter</p><!-- Titulo -->
+            </div>
+            <div class="col-12">
+                <input type="text" class="w-50" placeholder="Tú dirección de email..."><button class="button-css">SUBSCRIBETE</button> <!-- boton con la clase button-css(style.css) -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./css/bootstrap/js/bootstrap.min.js"></script> <!-- script bootstrap 5 -->
+    <script src="./js/darkstyle.js"></script> <!-- script Modo Oscuro -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="crossorigin=""></script> <!-- Script externo(url) para el mapa -->
+    <script src="./js/leaflet.js"></script><!-- script para el mapa -->
+</body>
+</html>

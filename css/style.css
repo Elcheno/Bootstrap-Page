@@ -1,0 +1,73 @@
+:root{ /* declaracion de las variables de stylo */
+    --color-fuente-button: #ffffff;
+    --color-fondo-button: #000;
+    --color-fondo: #ffffff;
+    --color-fuente-white:#ffffff;
+    --color-fuente-black:#000;
+    --color-fondo-content: rgb(223, 223, 223);
+}
+
+[tema='dark']{ /* Cambio de los colores de las variables de stylo del modo 'dark' */ 
+    --color-fuente-button:#000;
+    --color-fondo-button: #ffffff;
+    --color-fondo: #000;
+    --color-fuente-white:#ffffff;
+    --color-fuente-black:#ffffff;
+    --color-fondo-content: rgb(100, 100, 100);
+}
+
+[tema="light"]{/* Cambio de los colores de las variables de stylo del modo 'light' */ 
+    --color-fuente-button: #ffffff;
+    --color-fondo-button: #000;
+    --color-fondo:#ffffff;
+    --color-fuente-white:#ffffff;
+    --color-fuente-black:#000;
+    --color-fondo-content: rgb(223, 223, 223);
+}
+
+#padre{
+    overflow: hidden;
+}
+
+.bg-grey{ /* color del fondo de los elementos flotantes */
+    background-color: var(--color-fondo-content);
+}
+
+.text-button{
+    font-size: 0.5rem;
+}
+
+.button-css{ /* stylo de los botones */ 
+    background-color: var(--color-fondo-button);
+    border-color: var(--color-fondo-button);
+    color: var(--color-fuente-button);
+}
+
+.bg-content{ /* color del fondo de los elementos flotantes */
+    background-color: var(--color-fondo-content);
+}
+
+.bg-content-two{
+    background-color: rgb(163, 163, 163);
+}
+
+.color-content{ /* color de los caracteres */
+    color: var(--color-fuente-black);
+}
+
+body{  /* color del fondo */
+    background-color: var(--color-fondo);
+}
+
+#map{
+    height: 275px;
+}
+
+#text-comparator{ /* stylo del contendor del area de texto a insertar para el comparador  */
+    height: 200px;
+    border-radius: 10px;
+}
+
+.vl {
+    border-left: 1px solid rgb(202, 201, 201);
+}

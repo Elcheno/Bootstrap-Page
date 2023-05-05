@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index2</title>
+    <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.min.css"><!-- link de bootstrap -->
+    <link rel="stylesheet" href="css/style.css"><!-- link de la hoja de estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- link de font awesome 4 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/><!-- link para el mapa -->
+    <script src="/js/include.js"></script> <!-- link js externo -->
+    <script src="./js/comparator.js"></script> <!-- link js comparador -->
+</head>
+
+<!-- 
+    Todas los caracteres del index tienen la clase 'color-content' la cual explico su uso en style.css 
+    Todos los botones del index tienen la clase 'button-css' la cual explico su uso en style.css
+    La clase bg-content esta explicada su uso en el archivo style.css
+-->
+
+<body>
+    <div class="container-fluid p-0"> <!-- quito el padding -->
+
+        <div class="header"> <!-- CABECERA -->
+        <!-- 
+            Este es el menu de bootstrap ligeramente modificado 
+            como el tamaño de letra, o el switch(Modo Oscuro) 
+        -->
+            <nav class="navbar navbar-expand-lg bg-content fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand color-content fs-3" href="./index.html">MrShisa</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link color-content fs-5" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link color-content fs-5" href="./index2.html">Cachimbas</a>
+                        </li>
+                        <a class="nav-link color-content fs-5" href="index3.html">Accesorios</a>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                    <div class="form-check form-switch" id="switch">
+                        <input class="form-check-input fs-5" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label color-content fs-5" for="flexSwitchCheckDefault">Modo Oscuro</label> <!-- Switch -->
+                      </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="mt-4 body-content text-center container-fluid "> <!-- Contenedor padre -->
+        <!--
+            Este es el contenido principal de la pagina
+        -->
+            <p class="fs-4 mb-5 color-content">CACHIMBAS</p>
+
+            <div class="row d-flex"><!-- Contenedor 1 -->
+                <div class=" container col-lg-6 col-md-12"> <!-- Contenedor -->
+                    <div id="padre" class=""> <!-- Contenedor de la imagen -->
+                        <img src="./img/cachimba1.jpg" alt="Imagen de la cachimba" class="w-50"><!-- imagen -->
+                        <p class="precio fs-4 text-center color-content">109,95€</p> <!-- precio -->
+                    </div>
+                </div>
+                <div class="container col-lg-6 col-md-12 align-items-center justify-content-start d-flex"> <!-- Contenedor que alinea la Descripcion completa -->
+                    <div class="col-lg-8 col-md-12">
+                        <p class="col-12 fs-4 color-content fw-bold fs-5">Cachimba 1</p> <!-- Titulo -->
+                        <!-- Descripcion -->
+                        <p class="col-12 mt-4 color-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto, aliquid quibusdam recusandae, aut molestiae atque doloremque sed laudantium dolores neque? Maxime ipsa rem explicabo hic ut. Nobis, dolore minus?</p>
+                        <button class="col-lg-4 col-md-10 rounded mt-5 button-css">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+                    </div>
+                </div>
+            </div>
+
+            <hr class="m-4"><!-- divisor -->
+            <div class="d-flex col-12 justify-content-center"><!-- Contenedor -->
+                <!-- Este Contendor se repite posteriormente -->
+                <div class="bg-content p-4 col-10">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 color-content fw-bold">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>
+            </div>
+            <hr class="m-4"><!-- divisor -->
+
+            <div class="row d-flex">
+            <!-- 
+                En este caso la pagina invierte el contenedor pero solo en la vista pc ya que en la vista tablet y movil los contenedores ocupan las
+                 12 columnas, es por eso que se repite el mismo bloque con el añadido de las clases d-lg-flex para que se visualice y la clase d-none
+                 para que el resto de vistas no lo visualicen, mientras que el otro contenedor utiliza d-lg-none para no visualizarlo en la vista pc
+                 y d-flex para que el resto si.
+            -->
+                <div class="container col-lg-6 col-md-12 align-items-center justify-content-end d-flex"><!-- Contenedor que alinea la Descripcion completa -->
+                    <div class="col-lg-8 col-md-12 d-none d-lg-block">
+                        <p class="col-12 fs-4 color-content fw-bold fs-5">Cachimba 2</p><!-- Titulo -->
+                        <!-- Descripcion -->
+                        <p class="col-12 mt-4 color-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto, aliquid quibusdam recusandae, aut molestiae atque doloremque sed laudantium dolores neque? Maxime ipsa rem explicabo hic ut. Nobis, dolore minus?</p>
+                        <button class="col-lg-4 col-md-10 rounded mt-5 button-css">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+                    </div>
+                </div>
+                <div class=" container col-lg-6 col-md-12"> <!-- Contenedor -->
+                    <div id="padre" class=""><!-- Contenedor de la imagen -->
+                        <img src="./img/cachimba1.jpg" alt="Imagen de la cachimba" class="w-50"> <!-- imagen -->
+                        <p class="precio fs-4 text-center color-content">109,95€</p><!-- precio -->
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 d-lg-none">
+                    <p class="col-12 fs-4 color-content fw-bold fs-5">Cachimba 2</p><!-- Titulo -->
+                    <!-- Descripcion -->
+                    <p class="col-12 mt-4 color-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto, aliquid quibusdam recusandae, aut molestiae atque doloremque sed laudantium dolores neque? Maxime ipsa rem explicabo hic ut. Nobis, dolore minus?</p>
+                    <button class="col-lg-4 col-md-10 rounded mt-5 button-css">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+                </div>
+            </div>
+
+            <hr class="m-4"><!-- divisor -->
+            <div class="d-flex col-12 justify-content-center"><!-- Contenedor -->
+                <div class="bg-content p-4 col-10">
+                    <p class="color-content fw-bold">CONOCE NUESTROS ACCESORIOS MÁS VENDIDOS</p>
+                    <p><a href="./index3.html" class="fw-bold color-content">ACCESORIOS</a></p>
+                </div>
+            </div>
+            <hr class="m-4"><!-- divisor -->
+           
+            <div class="row d-flex">
+                <div class=" container col-lg-6 col-md-12"> <!-- Contenedor -->
+                    <div id="padre" class=""><!-- Contenedor de la imagen -->
+                        <img src="./img/cachimba1.jpg" alt="Imagen de la cachimba" class="w-50"><!-- imagen -->
+                        <p class="precio fs-4 text-center color-content">109,95€</p><!-- precio -->
+                    </div>
+                </div>
+                <div class="container col-lg-6 col-md-12 align-items-center justify-content-start d-flex">
+                    <div class="col-lg-10 col-md-12">
+                        <p class="col-12 fs-4 color-content fw-bold fs-5">Cachimba 3</p><!-- Titulo -->
+                        <!-- Descripcion -->
+                        <p class="col-12 mt-4 color-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto, aliquid quibusdam recusandae, aut molestiae atque doloremque sed laudantium dolores neque? Maxime ipsa rem explicabo hic ut. Nobis, dolore minus?</p>
+                        <button class="col-lg-4 col-md-10 rounded mt-5 button-css">SABER MÁS</button><!-- boton con la clase button-css(style.css) -->
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="m-4"><!-- divisor -->
+            <div class="d-flex col-12 justify-content-center"><!-- Contenedor -->
+                <!-- Este Contendor se repite posteriormente -->
+                <div class="bg-content p-4 col-10">
+                    <!-- Utilizacion de la libreria Font Awesome 4 para los iconos de Redes Sociales -->
+                    <p class="col-12 color-content fw-bold">SIGUENOS EN NUESTRAS REDES SOCIALES</p>
+                    <a href="#" class="color-content"><i class="fa fa-instagram col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-youtube-play col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-envelope col-1"></i></a>
+                    <a href="#" class="color-content"><i class="fa fa-twitter col-1"></i></a>
+                </div>
+            </div>
+            <hr class="m-4"><!-- divisor -->
+        </div>
+
+
+        <div class="comparator container d-flex flex-wrap text-center justify-content-center"> <!-- Contenedor del comparador de cachimbas -->
+
+            <div class="col-12"> <!-- Contendor del titulo -->
+                <p class="color-content fw-bold fs-5">COMPARADOR DE CACHIMBAS</p> <!-- Titulo -->
+            </div>
+
+            <div class="col-12 d-flex flex-wrap justify-content-center"> <!-- Contenedor los selectores de cachimbas -->
+                <div class="col-lg-3 col-12 d-flex justify-content-center">
+                    <select class="form-select" id="select1"> <!-- Select 1 -->
+                        <option value="1">cachimba1</option>
+                        <option value="2">cachimba2</option>
+                    </select>
+                </div>
+
+                <p class="col-lg-3 col-12 color-content m-3">X</p>
+
+                <div class="col-lg-3 col-12 d-flex justify-content-center">
+                    <select class="form-select" id="select2"><!-- Select 2 -->
+                        <option value="1">cachimba1</option>
+                        <option value="2">cachimba2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 mt-4 mb-3 d-flex justify-content-center"> <!-- Contendor del boton -->
+                <div class="col-12 col-lg-2">
+                    <button class="rounded button-css w-100" id="button-comparator" onclick="comparatorFuction()">COMPARAR</button> <!-- boton que llama a la función 'comparatorFuction()' -->
+                </div>
+            </div>
+            <div class="col-12"> <!-- Contedor del area de texto donde se inserta el resultado de la comparacion -->
+                <div id="text-comparator" class="row d-flex col-12 justify-content-center text-center w-100 bg-white"></div> <!-- Contendor donde se inserta el texto clase(text-comparator) -->
+            </div>
+        </div>
+
+        <hr class="m-4"> <!-- divisor -->
+
+        <div class="foot-content d-flex flex-wrap mb-5"><!-- contenedor del pie de pagina -->
+            <div class="map col-12 col-lg-6 text-center d-flex justify-content-center"> <!-- Contenedor -->
+                <div class="p-3 col-8 rounded bg-content" id="padre"> <!-- Contenedor del mapa -->
+                    <p class="m-0 col-12 color-content fs-5 fw-bold mb-3">VISITANOS</p> <!-- Titulo -->
+                    <div id="map"></div> <!-- Mapa -->
+                </div>
+            </div>
+            <div class="vl col-lg-1 d-lg-block d-none"></div> <!-- Divisor lateral con la clase 'vl' solo se visualiza en vista pc (Utilizando las clases d-lg-block y d-none) -->
+            <div class="subscribe container col-12 col-lg-5 p-0 text-center d-flex align-items-center justify-content-center"><!-- Contenedor -->
+                <div class="w-100"><!-- Contenedor 100%Ancho -->
+                    <div class="col-12">
+                        <p class="color-content fw-bold fs-5">Subscribete a nuestra newsletter</p><!-- Titulo -->
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="w-50" placeholder="Tú dirección de email..."><button class="button-css">SUBSCRIBETE</button><!-- boton con la clase button-css(style.css) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./css/bootstrap/js/bootstrap.min.js"></script><!-- script bootstrap 5 -->
+    <script src="./js/darkstyle.js"></script><!-- script Modo Oscuro -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="crossorigin=""></script><!-- Script externo(url) para el mapa -->
+    <script src="./js/leaflet.js"></script><!-- script para el mapa -->
+</body>
+</html>
